@@ -1,0 +1,13 @@
+" Color scheme
+set background=dark
+colorscheme solarized
+highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+" Font
+set guifont=DejaVu\ Sans\ Mono:h11
+
+" Default folder
+au VimEnter * :cd ~
+
+" Windows options
+source $VIMRUNTIME\mswin.vim
