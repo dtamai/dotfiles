@@ -10,4 +10,6 @@ set guifont=DejaVu\ Sans\ Mono:h11
 au VimEnter * :cd ~
 
 " Windows options
-source $VIMRUNTIME\mswin.vim
+if has('win32')
+  source $VIMRUNTIME\mswin.vim
+end

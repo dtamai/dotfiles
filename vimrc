@@ -1,3 +1,11 @@
+function s:LocalRC()
+  if has('win32')
+    return ($HOME."\_vimrc.local")
+  else
+    return ($HOME."/.vimrc.local")
+  end
+endfunction
+
 set history=50
 set incsearch     " do incremental searching
 set hlsearch      " highlight search
@@ -14,6 +22,7 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+call pathogen#infect()
 filetype plugin indent on
 
 " Softtabs, 2 spaces
@@ -23,11 +32,6 @@ set expandtab
 
 " Display extra whitespace
 set list listchars=tab:>-,trail:-
-
-" Local config
-if filereadable(fnamemodify("~/.vimrc.local", ':p'))
-  source ~/.vimrc.local
-endif
 
 " Numbers
 set number
@@ -75,3 +79,9 @@ let g:html_indent_tags = 'li\|p'
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
+
+let s:local = s:LocalRC()
+if filereadable(s:local)
+  exec "source " . s:local
+  let $MY_LOCAL_VIMRC = s:LocalRC()
+end
