@@ -7,7 +7,7 @@ The local files (.local) are just copied to their places, it's not important tha
 ## Installation ##
 
 ### Windows ###
-__install.bat__
+  $ install.bat
 
 #### Requirements ####
 * user must have privilege to create symbolic links (if non-admin)  
@@ -25,7 +25,7 @@ __install.bat__
 > If the user folder is "C:\Users\\_username_" than the files must be in "C:\\_some folder_"
 
 ### Linux ###
-__install.sh__
+  $ install.sh
 
 #### Requirements ####
 --
