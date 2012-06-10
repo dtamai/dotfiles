@@ -1,4 +1,4 @@
-function s:LocalRC()
+function! s:LocalRC()
   if has('win32')
     return ($HOME."\_vimrc.local")
   else
@@ -15,6 +15,7 @@ set noswapfile
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set fileencodings=utf-8
+set backspace=2
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -80,6 +81,12 @@ let g:html_indent_tags = 'li\|p'
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 
+" Windows options
+if has('win32')
+  source $VIMRUNTIME\mswin.vim
+end
+
+" Local configurations
 let s:local = s:LocalRC()
 if filereadable(s:local)
   exec "source " . s:local

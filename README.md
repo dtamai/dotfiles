@@ -1,15 +1,16 @@
-dotfiles
-========
+# dotfiles
 Some dotfiles.
 
-## Vim
-TODO: brief description (the local file)
+## Vim ##
+The local files (.local) are just copied to their places, it's not important that they are versioned.
 
-# Installation
+## Installation ##
 
-### Windows
-#### Requirements
-* user must have privilege to create symbolic links  
+### Windows ###
+__install.bat__
+
+#### Requirements ####
+* user must have privilege to create symbolic links (if non-admin)  
 > In Windows 7:  
 > Control Panel
 > \> Security  
@@ -20,7 +21,12 @@ TODO: brief description (the local file)
 > \- - - - - \> Create symbolic links  
 > \- - - - - - \> add user  
 
-* the files and the user folder must be in the same drive (it's not possible to create hard links between drives)  
+* the files and the user folder must be in the same drive (it's not possible to create hard links between drives; it works with soft links, but opening the link for writing will create a new file and the link will be overwritten i.e. the file will be out of version control)
 > If the user folder is "C:\Users\\_username_" than the files must be in "C:\\_some folder_"
 
-Then run __install.bat__ to create the links
+### Linux ###
+__install.sh__
+
+#### Requirements ####
+--
+

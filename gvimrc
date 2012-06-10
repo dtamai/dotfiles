@@ -1,4 +1,4 @@
-  function s:LocalRC()
+function! s:LocalRC()
   if has('win32')
     return ($HOME."\_gvimrc.local")
   else
@@ -15,6 +15,7 @@ set guioptions-=T
 " Use console dialogs
 set guioptions+=c
 
+" Local configurations
 let s:local = s:LocalRC()
 if filereadable(s:local)
   exec "source " . s:local
