@@ -4,6 +4,9 @@ Some dotfiles.
 ## Vim ##
 The local files (.local) are just copied to their places, it's not important that they are versioned.
 
+## zsh ##
+Needs 'oh-my-zsh'.
+
 ## Installation ##
 
 ### Windows ###
