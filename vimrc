@@ -1,21 +1,23 @@
-function! s:LocalRC()
-  if has('win32')
-    return ($HOME."\_vimrc.local")
-  else
-    return ($HOME."/.vimrc.local")
-  end
-endfunction
-
-set history=50
+set nocompatible  " Use Vim settings, rather then Vi settings
+set history=1000
 set incsearch     " do incremental searching
 set hlsearch      " highlight search
 set laststatus=2  " Always display the status line
-set nocompatible  " Use Vim settings, rather then Vi settings
 set noswapfile
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set fileencodings=utf-8
-set backspace=2
+set backspace=2   " backspace over everything
+set wildmenu
+set ignorecase
+set smartcase
+set showmatch    " blink matching pairs {[(
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Map <leader>e to open files in the same directory as the current file
+map <leader>e :e <C-R>=expand("%:h")<cr>/
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -30,6 +32,7 @@ filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set textwidth=78
 
 " Display extra whitespace
 set list listchars=tab:>-,trail:-
@@ -38,12 +41,16 @@ set list listchars=tab:>-,trail:-
 set number
 set numberwidth=5
 
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
+" Pretty status line
+set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
+hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 
 " Tab completion options
 set wildmode=list:longest,list:full
 set complete=.,w,t
+
+" Autocomplete using <C-x><C-u> (INSERT)
+set completefunc=syntaxcomplete#Complete
 
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
@@ -85,6 +92,14 @@ au BufRead,BufNewFile *.md set filetype=markdown
 if has('win32')
   source $VIMRUNTIME\mswin.vim
 end
+
+function! s:LocalRC()
+  if has('win32')
+    return ($HOME."\_vimrc.local")
+  else
+    return ($HOME."/.vimrc.local")
+  end
+endfunction
 
 " Local configurations
 let s:local = s:LocalRC()
