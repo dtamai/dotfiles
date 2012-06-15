@@ -16,6 +16,9 @@ set showmatch    " blink matching pairs {[(
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
+" Change leader
+let mapleader=","
+
 " Map <leader>e to open files in the same directory as the current file
 map <leader>e :e <C-R>=expand("%:h")<cr>/
 
@@ -23,6 +26,7 @@ map <leader>e :e <C-R>=expand("%:h")<cr>/
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
+  let &t_Co=256
 endif
 
 call pathogen#infect()
@@ -42,8 +46,7 @@ set number
 set numberwidth=5
 
 " Pretty status line
-set statusline=%<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)%O'%02b'
-hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
+set statusline=%<%f\ %y[%n]%=\ %(%1*%m%r%h%)%*\ L%l,C%c\ %P
 
 " Tab completion options
 set wildmode=list:longest,list:full
@@ -55,6 +58,7 @@ set completefunc=syntaxcomplete#Complete
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
     let col = col('.') - 1
+
     if !col || getline('.')[col - 1] !~ '\k'
         return "\<tab>"
     else
@@ -88,22 +92,15 @@ let g:html_indent_tags = 'li\|p'
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 
+" Some colors
+colorscheme vividchalk
+hi User1 ctermbg=Red ctermfg=Yellow gui=bold guibg=Red guifg=Yellow
+highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+" Default folder
+au VimEnter * :cd ~
+
 " Windows options
 if has('win32')
   source $VIMRUNTIME\mswin.vim
-end
-
-function! s:LocalRC()
-  if has('win32')
-    return ($HOME."\_vimrc.local")
-  else
-    return ($HOME."/.vimrc.local")
-  end
-endfunction
-
-" Local configurations
-let s:local = s:LocalRC()
-if filereadable(s:local)
-  exec "source " . s:local
-  let $MY_LOCAL_VIMRC = s:LocalRC()
 end
