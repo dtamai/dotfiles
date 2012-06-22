@@ -36,6 +36,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/home/daniel/.local/bin:/home/daniel/bin:/usr/local/bin
 
+export CDPATH=.:~:~/Study
+
 # Some useful things
 alias ls='ls -hG --color'
 alias ll='ls -lahG --color'
