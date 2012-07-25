@@ -13,6 +13,7 @@ set ignorecase
 set smartcase
 set showmatch    " blink matching pairs {[(
 
+"set autochdir
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -20,7 +21,20 @@ map Q gq
 let mapleader=","
 
 " Map <leader>e to open files in the same directory as the current file
-map <leader>e :e <C-R>=expand("%:h")<cr>/
+nnoremap <leader>e :FufCoverageFile<CR>
+
+" Lazy movement
+noremap <leader>j 15j
+noremap <leader>k 15k
+
+" F3 to select word, F4 to search, F4 to next, F5 to clear
+nnoremap <F3> viw
+vnoremap <F4> y/<C-R>"<CR>
+nnoremap <F4> n
+nnoremap <F5> :nohlsearch<CR>
+
+" cd into current file dir
+nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -36,7 +50,6 @@ filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set textwidth=78
 
 " Display extra whitespace
 set list listchars=tab:>-,trail:-
@@ -91,6 +104,9 @@ let g:html_indent_tags = 'li\|p'
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.mon set filetype=epl
+au BufRead,BufNewFile *.evt set filetype=epl
+au BufRead,BufNewFile *.bdf set filetype=epl
 
 " Some colors
 colorscheme vividchalk
