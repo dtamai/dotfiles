@@ -12,6 +12,9 @@ set wildmenu
 set ignorecase
 set smartcase
 set showmatch    " blink matching pairs {[(
+set cursorline
+set winwidth=120
+set winheight=40
 
 "set autochdir
 " Don't use Ex mode, use Q for formatting
@@ -21,21 +24,22 @@ map Q gq
 let mapleader=","
 
 " Map <leader>e to open files in the same directory as the current file
-nnoremap <leader>e :FufCoverageFile<CR>
+nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+
+" FuzzyFinder: open file using fuzzy search
+nnoremap <leader>f :FufCoverageFile<CR>
 
 " Lazy movement
-noremap <leader>j 15j
-noremap <leader>k 15k
+noremap <leader>j <PageDown>zz
+noremap <leader>k <PageUp>zz
 
-" F3 to select word, F4 to search, F4 to next, F5 to clear
-nnoremap <F3> viw
-vnoremap <F4> y/<C-R>"<CR>
-nnoremap <F4> n
+noremap <leader>n :call NumberToggle()<CR>
 nnoremap <F5> :nohlsearch<CR>
 
 " cd into current file dir
 nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
 
+nnoremap <leader>\ :echo strftime("%c")<CR>
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -52,11 +56,18 @@ set shiftwidth=2
 set expandtab
 
 " Display extra whitespace
-set list listchars=tab:>-,trail:-
+set list listchars=tab:» ,trail:·
 
 " Numbers
-set number
+set relativenumber
 set numberwidth=5
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
 
 " Pretty status line
 set statusline=%<%f\ %y[%n]%=\ %(%1*%m%r%h%)%*\ L%l,C%c\ %P
@@ -84,11 +95,6 @@ inoremap <s-tab> <c-n>
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
 
 " Move using Ctrl + (hjkl)
 nnoremap <C-j> :m+<CR>==
@@ -107,16 +113,48 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.mon set filetype=epl
 au BufRead,BufNewFile *.evt set filetype=epl
 au BufRead,BufNewFile *.bdf set filetype=epl
+au BufRead,BufNewFile *.xml set noexpandtab
 
 " Some colors
-colorscheme vividchalk
+colorscheme grb256
 hi User1 ctermbg=Red ctermfg=Yellow gui=bold guibg=Red guifg=Yellow
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
-" Default folder
-au VimEnter * :cd ~
+highlight Folded guibg=#0A0A0A guifg=#9090D0
+highlight Search gui=underline guibg=#333333 guifg=#CC9933
 
 " Windows options
 if has('win32')
   source $VIMRUNTIME\mswin.vim
 end
+
+" Cygwin options
+if has('win32unix')
+  vnoremap <leader>y :w ! cat > /dev/clipboard<CR><CR>
+end
+
+let g:fuf_coveragefile_exclude = 'logs[/\\]\|bundle_instance_files[/\\]|tmp[/\\]|isolate[/\\]|build[/\\]'
+
+" RainbowParentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+let g:rbpt_colorpairs = [
+    \ ['gray',        'DarkOrchid3'],
+    \ ['177',         'RoyalBlue3'],
+    \ ['darkmagenta', 'RoyalBlue3'],
+    \ ['lightblue',   'SeaGreen3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['yellow',      'firebrick3'],
+    \ ['214',         'firebrick3'],
+    \ ['red',         'DarkOrchid3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['177',         'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['lightblue',   'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['yellow',      'DarkOrchid3'],
+    \ ['214',         'SeaGreen3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
