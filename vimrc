@@ -118,6 +118,8 @@ au BufRead,BufNewFile *.xml set noexpandtab
 " Some colors
 colorscheme grb256
 hi User1 ctermbg=Red ctermfg=Yellow gui=bold guibg=Red guifg=Yellow
+hi StatusLine ctermfg=Grey ctermbg=DarkBlue
+hi StatusLineNC ctermfg=Black ctermbg=214
 highlight Folded guibg=#0A0A0A guifg=#9090D0
 highlight Search gui=underline guibg=#333333 guifg=#CC9933
 
