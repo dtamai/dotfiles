@@ -26,9 +26,6 @@ let mapleader=","
 " Map <leader>e to open files in the same directory as the current file
 nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 
-" FuzzyFinder: open file using fuzzy search
-nnoremap <leader>f :FufCoverageFile<CR>
-
 " Lazy movement
 noremap <leader>j <PageDown>zz
 noremap <leader>k <PageUp>zz
@@ -132,8 +129,6 @@ end
 if has('win32unix')
   vnoremap <leader>y :w ! cat > /dev/clipboard<CR><CR>
 end
-
-let g:fuf_coveragefile_exclude = 'logs[/\\]\|bundle_instance_files[/\\]|tmp[/\\]|isolate[/\\]|build[/\\]'
 
 " RainbowParentheses
 au VimEnter * RainbowParenthesesToggle
