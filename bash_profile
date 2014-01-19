@@ -7,7 +7,11 @@ fi
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
-export PATH=$HOME/bin:$PATH
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
 
 alias ls="ls --color"
 alias ll="ls -lah"
@@ -223,5 +227,6 @@ function fixgrep
   grep $1 $2 | sed -e 's/\x01/|/g' -e ''/$1/s//`printf "$BIGreen$1$Color_Off"`/'';
 }
 
-settitle =/
+source /usr/local/share/chruby/chruby.sh
+chruby 2.1.0
 

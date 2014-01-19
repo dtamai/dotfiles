@@ -107,27 +107,22 @@ let g:html_indent_tags = 'li\|p'
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.mon set filetype=epl
-au BufRead,BufNewFile *.evt set filetype=epl
-au BufRead,BufNewFile *.bdf set filetype=epl
 au BufRead,BufNewFile *.xml set noexpandtab
 
 " Some colors
-colorscheme grb256
+colorscheme vividchalk
 hi User1 ctermbg=Red ctermfg=Yellow gui=bold guibg=Red guifg=Yellow
-hi StatusLine ctermfg=Grey ctermbg=DarkBlue
-hi StatusLineNC ctermfg=Black ctermbg=214
-highlight Folded guibg=#0A0A0A guifg=#9090D0
-highlight Search gui=underline guibg=#333333 guifg=#CC9933
 
 " Windows options
 if has('win32')
   source $VIMRUNTIME\mswin.vim
 end
 
-" Cygwin options
+" Copy Clipboard
 if has('win32unix')
   vnoremap <leader>y :w ! cat > /dev/clipboard<CR><CR>
+else
+  vnoremap <leader>y :<Esc>`>a<CR><Esc>mx`<i<CR><Esc>my'xk$v'y!xclip -selection c<CR>u
 end
 
 " RainbowParentheses
