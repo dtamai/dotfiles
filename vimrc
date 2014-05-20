@@ -110,7 +110,8 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.xml set noexpandtab
 
 " Some colors
-colorscheme vividchalk
+set t_Co=256
+colorscheme molokai
 hi User1 ctermbg=Red ctermfg=Yellow gui=bold guibg=Red guifg=Yellow
 
 " Windows options

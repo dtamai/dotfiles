@@ -18,6 +18,11 @@ alias ll="ls -lah"
 alias grep="grep --color"
 
 export EDITOR=vim
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  export TERM='xterm-256color'
+else
+  export TERM='xterm-color'
+fi
 
 #  Customize BASH PS1 prompt to show current GIT repository and branch.
 #  by Mike Stewart - http://MediaDoneRight.com
@@ -228,5 +233,4 @@ function fixgrep
 }
 
 source /usr/local/share/chruby/chruby.sh
-chruby 2.1.0
-
+chruby 2.1.1
