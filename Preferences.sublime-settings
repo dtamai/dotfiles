@@ -1,0 +1,21 @@
+{
+	"caret_style": "wide",
+	"color_inactive_tabs": true,
+	"color_scheme": "Packages/Theme - Afterglow/Afterglow-monokai.tmTheme",
+	"draw_white_space": "selection",
+	"ensure_newline_at_eof_on_save": false,
+	"font_face": "Inconsolata",
+	"font_size": 16,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+	],
+	"sidebar_size_14": true,
+	"status_bar_brighter": true,
+	"tab_size": 2,
+	"tabs_small": true,
+	"theme": "Afterglow-green.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
