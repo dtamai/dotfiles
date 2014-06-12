@@ -199,12 +199,14 @@ __git_svn_ps1()
 __job_count()
 {
   local j=$(jobs -s | wc -l)
-  if [ $j -gt 1 ]; then
-    j=$Red{$j}$Color_Off
+  if [ $j -eq 0 ]; then
+    j=$Green"No jobs"$Color_Off
   elif [ $j -eq 1 ]; then
+    j=$Cyan[$j]$Color_Off
+  elif [ $j -eq 2 ]; then
     j=$Yellow[$j]$Color_Off
   else
-    j=$Green"No jobs"$Color_Off
+    j=$Red{$j}$Color_Off
   fi
   echo -e "$j"
 }
