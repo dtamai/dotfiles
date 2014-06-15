@@ -14,7 +14,7 @@ set smartcase
 set showmatch    " blink matching pairs {[(
 set cursorline
 set winwidth=120
-set winheight=40
+set winheight=30
 
 "set autochdir
 " Don't use Ex mode, use Q for formatting
