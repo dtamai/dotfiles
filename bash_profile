@@ -17,6 +17,13 @@ alias ls="ls --color"
 alias ll="ls -lah"
 alias grep="grep --color"
 
+function h {
+  history | tail -n 10
+}
+
+export HISTIGNORE="&:cd ~:cd ..:exit:h:history:??"
+export HISTCONTROL=ignoreboth:erasedups
+
 export EDITOR=vim
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
   export TERM='xterm-256color'
