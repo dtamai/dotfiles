@@ -21,7 +21,7 @@ set winheight=30
 map Q gq
 
 " Change leader
-let mapleader=","
+let mapleader=" "
 
 " Map <leader>e to open files in the same directory as the current file
 nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
