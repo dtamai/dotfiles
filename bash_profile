@@ -140,7 +140,7 @@ __git_ps1 ()
       __ps1=$IRed'{'$(__git_branch)'}'
     fi
   fi
-  echo -e " $__ps1 "
+  echo -e "$__ps1"
 }
 
 __git_branch ()
@@ -188,26 +188,28 @@ __svn_ps1()
   else
     __ps1='('$(__svn_branch):$(__svn_rev)')'
   fi
-  echo -e " $__ps1 "
+  echo -e "$__ps1"
 }
 
 # Git/Subversion prompt function
 __git_svn_ps1()
 {
-  local s=
+  local s="∅"
   if [[ -d ".git" ]]; then
     s=`__git_ps1`
   elif [[ -d ".svn" ]]; then
     s=`__svn_ps1`
+  else
+    s=$Yellow一人で$Color_Off
   fi
-  echo -n "$s"
+  echo -ne "$s"
 }
 
 __job_count()
 {
   local j=$(jobs -s | wc -l)
   if [ $j -eq 0 ]; then
-    j=$Green"No jobs"$Color_Off
+    j=$Green休$Color_Off
   elif [ $j -eq 1 ]; then
     j=$Cyan[$j]$Color_Off
   elif [ $j -eq 2 ]; then
@@ -218,12 +220,23 @@ __job_count()
   echo -e "$j"
 }
 
-export PS1=$BCyan$Time12h$Color_Off' $(__git_svn_ps1)'$BYellow$PathShort$Color_Off' $(__job_count) '" \n\$ "
+__time()
+{
+  local t=""
+  if [ -n "$TMUX" ]; then
+    t=$BCyan時$Color_Off
+  else
+    t=$BCyan$Time12h$Color_Off
+  fi
+  echo "$t"
+}
+
+export PS1="$(__time)"' $(__git_svn_ps1) '$BYellow$PathShort$Color_Off' $(__job_count) '" \n\$ "
 
 # Função para mudar o título da janela
 function settitle
-{ 
-  echo -ne "\e]2;$@\a\e]1;$@\a"; 
+{
+  echo -ne "\e]2;$@\a\e]1;$@\a";
 }
 
 function sohtopipe
@@ -239,6 +252,12 @@ function fixtail
 function fixgrep
 {
   grep $1 $2 | sed -e 's/\x01/|/g' -e ''/$1/s//`printf "$BIGreen$1$Color_Off"`/'';
+}
+
+function tmux()
+{
+  TMUX_BIN=`which tmux`
+  TERM=screen-256color $TMUX_BIN $@
 }
 
 source /usr/local/share/chruby/chruby.sh
