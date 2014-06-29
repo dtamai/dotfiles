@@ -34,7 +34,7 @@ noremap <leader>n :call NumberToggle()<CR>
 nnoremap <F5> :nohlsearch<CR>
 
 " cd into current file dir
-nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
+nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 
 nnoremap <leader>\ :echo strftime("%c")<CR>
 " Switch syntax highlighting on, when the terminal has colors
