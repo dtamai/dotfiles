@@ -26,12 +26,14 @@ let mapleader=" "
 " Map <leader>e to open files in the same directory as the current file
 nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 
-" Lazy movement
-noremap <leader>j <PageDown>zz
-noremap <leader>k <PageUp>zz
-
-noremap <leader>n :call NumberToggle()<CR>
 nnoremap <F5> :nohlsearch<CR>
+
+" Swap v and CTRL-V, Visual and Visual Block
+nnoremap v <C-v>
+nnoremap <C-v> v
+
+vnoremap v <C-v>
+vnoremap <C-v> v
 
 " cd into current file dir
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
@@ -58,13 +60,6 @@ set list listchars=tab:» ,trail:·
 " Numbers
 set relativenumber
 set numberwidth=5
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
 
 " Pretty status line
 set statusline=%<%f\ %y[%n]%=\ %(%1*%m%r%h%)%*\ L%l,C%c\ %P
@@ -113,6 +108,10 @@ au BufRead,BufNewFile *.xml set noexpandtab
 set t_Co=256
 colorscheme molokai
 hi User1 ctermbg=Red ctermfg=Yellow gui=bold guibg=Red guifg=Yellow
+
+" Identify long lines
+hi ColorColumn ctermbg=lightgreen ctermfg=black
+call matchadd('ColorColumn', '\%81v', 100)
 
 " Windows options
 if has('win32')
