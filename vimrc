@@ -55,7 +55,8 @@ set shiftwidth=2
 set expandtab
 
 " Display extra whitespace
-set list listchars=tab:» ,trail:·
+set list
+set listchars=tab:>\ ,trail:·,extends:>,precedes:<,nbsp:+
 
 " Numbers
 set relativenumber
