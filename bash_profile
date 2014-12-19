@@ -261,4 +261,5 @@ function tmux()
 }
 
 source /usr/local/share/chruby/chruby.sh
-chruby 2.1.1
+source /usr/local/share/gem_home/gem_home.sh
+chruby 2.1.5
