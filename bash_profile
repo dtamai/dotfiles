@@ -1,10 +1,5 @@
 # User dependent .bash_profile file
 
-# source the users bashrc if it exists
-if [ -f "${HOME}/.bashrc" ] ; then
-  source "${HOME}/.bashrc"
-fi
-
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
@@ -231,7 +226,7 @@ __time()
   echo "$t"
 }
 
-export PS1="$(__time)"' $(__git_svn_ps1) '$BYellow$PathShort$Color_Off' $(__job_count) '" \n\$ "
+export PS1="$(__time)"' $(__git_svn_ps1) '$BYellow$PathShort$Color_Off' $(__job_count) '"$Yellow$HOSTNAME$Color_Off \n\$ "
 
 # Função para mudar o título da janela
 function settitle
