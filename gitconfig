@@ -1,0 +1,9 @@
+[user]
+	name = Daniel Tamai
+	email =
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+[push]
+	default = simple
