@@ -1,9 +1,37 @@
-[user]
-	name = Daniel Tamai
-	email =
 [alias]
-	st = status
-	co = checkout
-	ci = commit
+  st = status
+  ci = commit
+  co = checkout
+  di = diff
+  dc = diff --cached
+  l = log --graph --date=short
+  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+  simple = log --pretty=format:\" * %s\"
+  shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+
+[color]
+  ui = true
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+
+[format]
+  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+
+[branch]
+  autosetupmerge = true
 [push]
-	default = simple
+  # 'git push' will push the current branch to its tracking branch
+  # # the usual default is to push all branches
+  default = upstream
+
+[include]
+  path = .gitconfig.user
