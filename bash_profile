@@ -1,7 +1,10 @@
 # User dependent .bash_profile file
 
 bind "set completion-ignore-case on"
+bind "set completion-map-case"
 bind "set show-all-if-ambiguous on"
+bind "set colored-stats on"
+bind "set completion-query-items 20"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
