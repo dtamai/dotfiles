@@ -13,7 +13,7 @@ set ignorecase
 set smartcase
 set showmatch    " blink matching pairs {[(
 set cursorline
-set winwidth=120
+set winwidth=87
 set winheight=30
 
 "set autochdir
@@ -25,6 +25,9 @@ let mapleader=" "
 
 " Map <leader>e to open files in the same directory as the current file
 nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+
+" Run rspec spec under cursor
+nnoremap <C-t> :wa<CR> \| :!rspec %:<C-r>=line('.')<CR><CR>
 
 nnoremap <F5> :nohlsearch<CR>
 
