@@ -255,7 +255,8 @@ function fixgrep
 function tmux()
 {
   TMUX_BIN=`which tmux`
-  TERM=screen-256color $TMUX_BIN $@
+  TMUX_CMD="direnv exec / $TMUX_BIN"
+  TERM=screen-256color $TMUX_CMD $@
 }
 
 source /usr/local/share/chruby/chruby.sh
