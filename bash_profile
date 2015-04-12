@@ -1,8 +1,10 @@
 # User dependent .bash_profile file
 
+bind "set bell-style visible"
 bind "set completion-ignore-case on"
-bind "set completion-map-case"
+bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
+bind "set mark-symlinked-directories on"
 bind "set colored-stats on"
 bind "set completion-query-items 20"
 
