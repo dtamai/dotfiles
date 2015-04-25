@@ -1,4 +1,30 @@
 set nocompatible  " Use Vim settings, rather then Vi settings
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tomasr/molokai'
+Plugin 'sunaku/vim-ruby-minitest'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'kien/rainbow_parentheses.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 set history=1000
 set incsearch     " do incremental searching
 set hlsearch      " highlight search
@@ -49,7 +75,6 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   let &t_Co=256
 endif
 
-call pathogen#infect()
 filetype plugin indent on
 
 " Softtabs, 2 spaces
