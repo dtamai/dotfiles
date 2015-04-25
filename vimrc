@@ -64,6 +64,9 @@ nnoremap <C-v> v
 vnoremap v <C-v>
 vnoremap <C-v> v
 
+nmap k gk
+nmap j gj
+
 " cd into current file dir
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 
