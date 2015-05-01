@@ -103,6 +103,8 @@ set complete=.,w,t
 " Autocomplete using <C-x><C-u> (INSERT)
 set completefunc=syntaxcomplete#Complete
 
+let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn|gem)|tmp|vendor)$'
+
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
     let col = col('.') - 1
