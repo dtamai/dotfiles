@@ -219,14 +219,18 @@ volumewidget = lain.widgets.alsa({
     end
 })
 
+function format_net(value)
+  return string.format("%6.1f", value)
+end
+
 -- Net
 neticon = wibox.widget.imagebox(beautiful.widget_net)
 neticon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn_with_shell(iptraf) end)))
 netwidget = lain.widgets.net({
     settings = function()
-        widget:set_markup(markup("#7AC82E", " " .. net_now.received)
+        widget:set_markup(markup("#7AC82E", " " .. format_net(net_now.received))
                           .. " " ..
-                          markup("#46A8C3", " " .. net_now.sent .. " "))
+                          markup("#46A8C3", " " .. format_net(net_now.sent) .. " "))
     end
 })
 
