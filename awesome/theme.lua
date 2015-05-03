@@ -11,8 +11,8 @@ theme                               = {}
 themes_dir                          = os.getenv("HOME") .. "/.config/awesome/themes/current"
 theme.wallpaper                     = themes_dir .. "/wall"
 
-theme.font                          = "Terminus 12"
-theme.taglist_font                  = "Courier Bold 12"
+theme.font                          = "Droid Sans Mono Bold 11"
+theme.taglist_font                  = "Courier Bold 10"
 theme.fg_normal                     = "#DDDDFF"
 theme.fg_focus                      = "#F0DFAF"
 theme.fg_urgent                     = "#CC9393"

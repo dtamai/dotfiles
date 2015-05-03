@@ -95,7 +95,7 @@ local layouts = {
 
 -- {{{ Tags
 tags = {
-   names =  { "₁"        , "₂"      , "₃"       , "₄"       , "₅"},
+   names =  { "[₁]"     , "[₂]"     , "[₃]"     , "[₄]"     , "[₅]"},
    layout = { layouts[2], layouts[1], layouts[4], layouts[4], layouts[4] }
 }
 
