@@ -166,22 +166,6 @@ cpuwidget = lain.widgets.cpu({
     end
 })
 
--- Coretemp
-tempicon = wibox.widget.imagebox(beautiful.widget_temp)
-tempwidget = lain.widgets.temp({
-    settings = function()
-        widget:set_text(" " .. coretemp_now .. "°C ")
-    end
-})
-
--- / fs
-fsicon = wibox.widget.imagebox(beautiful.widget_hdd)
-fswidget = lain.widgets.fs({
-    settings  = function()
-        widget:set_text(" " .. fs_now.used .. "% ")
-    end
-})
-
 -- Battery
 baticon = wibox.widget.imagebox(beautiful.widget_battery)
 batwidget = lain.widgets.bat({
@@ -344,8 +328,6 @@ for s = 1, screen.count() do
     right_layout_add(volicon, volumewidget)
     right_layout_add(memicon, memwidget)
     right_layout_add(cpuicon, cpuwidget)
-    right_layout_add(tempicon, tempwidget)
-    right_layout_add(fsicon, fswidget)
     right_layout_add(baticon, batwidget)
     right_layout_add(neticon,netwidget)
     right_layout_add(mytextclock, spr)
