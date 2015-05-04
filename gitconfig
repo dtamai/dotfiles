@@ -10,6 +10,7 @@
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
   simple = log --pretty=format:\" * %s\"
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+  s = status -s
 
 [color]
   ui = true
@@ -29,13 +30,19 @@
 
 [branch]
   autosetupmerge = true
+	autosetuprebase = always
 [push]
   # 'git push' will push the current branch to its tracking branch
   # # the usual default is to push all branches
-  default = upstream
+	default = simple
 
 [include]
   path = .gitconfig.user
 
 [core]
   excludesfile = ~/.gitignore.global
+	autocrlf = input
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
