@@ -154,7 +154,7 @@ mpdwidget = lain.widgets.mpd({
 memicon = wibox.widget.imagebox(beautiful.widget_mem)
 memwidget = lain.widgets.mem({
     settings = function()
-        widget:set_text(" " .. mem_now.used .. "MB ")
+        widget:set_text(mem_now.used .. "MB ")
     end
 })
 
@@ -162,7 +162,7 @@ memwidget = lain.widgets.mem({
 cpuicon = wibox.widget.imagebox(beautiful.widget_cpu)
 cpuwidget = lain.widgets.cpu({
     settings = function()
-        widget:set_text(" " .. cpu_now.usage .. "% ")
+        widget:set_text(cpu_now.usage .. "% ")
     end
 })
 
@@ -181,7 +181,7 @@ batwidget = lain.widgets.bat({
         else
             baticon:set_image(beautiful.widget_battery)
         end
-        widget:set_markup(" " .. bat_now.perc .. "% ")
+        widget:set_markup(bat_now.perc .. "% ")
     end
 })
 
@@ -199,7 +199,7 @@ volumewidget = lain.widgets.alsa({
             volicon:set_image(beautiful.widget_vol)
         end
 
-        widget:set_text(" " .. volume_now.level .. "% ")
+        widget:set_text(volume_now.level .. "% ")
     end
 })
 
@@ -212,9 +212,9 @@ neticon = wibox.widget.imagebox(beautiful.widget_net)
 neticon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn_with_shell(iptraf) end)))
 netwidget = lain.widgets.net({
     settings = function()
-        widget:set_markup(markup("#7AC82E", " " .. format_net(net_now.received))
+        widget:set_markup(markup("#7AC82E", format_net(net_now.received))
                           .. " " ..
-                          markup("#46A8C3", " " .. format_net(net_now.sent) .. " "))
+                          markup("#46A8C3", format_net(net_now.sent) .. " "))
     end
 })
 
