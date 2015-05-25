@@ -11,6 +11,7 @@
   simple = log --pretty=format:\" * %s\"
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
   s = status -s
+  home = rev-parse --show-toplevel
 
 [color]
   ui = true
