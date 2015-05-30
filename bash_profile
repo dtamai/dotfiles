@@ -263,5 +263,5 @@ function tmux()
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/gem_home/gem_home.sh
-chruby 2.2.1
+chruby 2.2.2
 eval "$(direnv hook bash)"
