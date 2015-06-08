@@ -89,14 +89,13 @@ local layouts = {
     lain.layout.cascade,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.fair,
 }
 -- }}}
 
 -- {{{ Tags
 tags = {
    names =  { "[₆]"     , "[₇]"     , "[₈]"     , "[₉]"     , "[₀]"},
-   layout = { layouts[2], layouts[1], layouts[1], layouts[2], layouts[2] }
+   layout = { layouts[2], layouts[3], layouts[1], layouts[3], layouts[2] }
 }
 
 for s = 1, screen.count() do
