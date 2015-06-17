@@ -88,6 +88,7 @@ set listchars=tab:>\ ,trail:·,extends:>,precedes:<,nbsp:+
 
 " Numbers
 set relativenumber
+set number
 set numberwidth=5
 
 " Pretty status line
