@@ -23,6 +23,7 @@ function h {
 
 export HISTIGNORE="&:cd ~:cd ..:exit:h:history:??"
 export HISTCONTROL=ignoreboth:erasedups
+export HISTFILESIZE=10000
 
 export EDITOR=vim
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
