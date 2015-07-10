@@ -135,6 +135,7 @@ let g:html_indent_tags = 'li\|p'
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.xml set noexpandtab
+au BufRead,BufNewFile *.avsc set filetype=json
 
 " Some colors
 set t_Co=256
