@@ -14,7 +14,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 alias ls="ls --color"
-alias ll="ls -lah"
+alias ll="ls -lah --group-directories-first"
 alias grep="grep --color"
 
 function h {
