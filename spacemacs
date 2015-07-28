@@ -23,6 +23,7 @@
      auto-completion
      better-defaults
      company-mode
+     ruby-on-rails
      erlang
      elixir
      git
@@ -71,16 +72,16 @@ before layers configuration."
    dotspacemacs-startup-banner 'official
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'."
-   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-startup-lists '(bookmarks projects recents)
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          monokai
-                         solarized-light
-                         solarized-dark
-                         spacemacs-light
                          spacemacs-dark
+                         spacemacs-light
+                         solarized-dark
+                         solarized-light
                          leuven
                          zenburn)
    ;; If non nil the cursor color matches the state color.
@@ -88,7 +89,7 @@ before layers configuration."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Mono"
-                               :size 18
+                               :size 20
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -171,6 +172,8 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   (add-hook 'alchemist-mode-hook 'company-mode)
+
+  (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
   ;; Linum-relative by default
   (setq linum-relative-current-symbol "")
