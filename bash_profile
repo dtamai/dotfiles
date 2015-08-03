@@ -196,7 +196,7 @@ __svn_ps1()
 __git_svn_ps1()
 {
   local s="∅"
-  if [[ -d ".git" ]]; then
+  if [[ -a ".git" ]]; then
     s=`__git_ps1`
   elif [[ -d ".svn" ]]; then
     s=`__svn_ps1`
