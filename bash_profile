@@ -195,13 +195,11 @@ __svn_ps1()
 # Git/Subversion prompt function
 __git_svn_ps1()
 {
-  local s="∅"
+  local s=$Yellow∅$Color_Off
   if [[ -a ".git" ]]; then
     s=`__git_ps1`
   elif [[ -d ".svn" ]]; then
     s=`__svn_ps1`
-  else
-    s=$Yellow一人で$Color_Off
   fi
   echo -ne "$s"
 }
