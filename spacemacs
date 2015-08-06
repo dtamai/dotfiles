@@ -90,7 +90,7 @@ before layers configuration."
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Mono"
                                :size 20
-                               :weight normal
+                               :weight semi-bold
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
