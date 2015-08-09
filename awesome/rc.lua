@@ -73,6 +73,7 @@ editor_cmd = terminal .. " -e " .. editor
 browser      = "firefox"
 file_browser = "sunflower"
 gui_editor   = "subl"
+emacs        = "emacs"
 graphics     = "gimp"
 monitor      = "mate-system-monitor"
 mail         = terminal .. " -e mutt "
@@ -482,6 +483,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "i", function () awful.util.spawn(file_browser) end),
     awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end),
     awful.key({ modkey }, "g", function () awful.util.spawn(monitor) end),
+    awful.key({ modkey }, "e", function () awful.util.spawn(emacs) end),
 
     -- Prompt
     awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
