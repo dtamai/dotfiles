@@ -174,6 +174,9 @@ layers configuration."
   (add-hook 'alchemist-mode-hook 'company-mode)
 
   (add-hook 'projectile-mode-hook 'projectile-rails-on)
+  (setq ruby-insert-encoding-magic-comment nil)
+
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
   ;; Linum-relative by default
   (setq linum-relative-current-symbol "")
