@@ -167,7 +167,7 @@ before layers configuration."
   ;; User initialization goes here
   )
 
-(defun dotspacemacs/config ()
+(defun dotspacemacs/user-config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
@@ -177,6 +177,8 @@ layers configuration."
   (setq ruby-insert-encoding-magic-comment nil)
 
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+  (setq web-mode-markup-indent-offset 2)
 
   ;; Linum-relative by default
   (setq linum-relative-current-symbol "")
