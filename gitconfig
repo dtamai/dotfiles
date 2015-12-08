@@ -6,6 +6,7 @@
   dc = diff --cached
   ap = add -p
   l = log --graph --date=short
+  cp = cherry-pick
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
   simple = log --pretty=format:\" * %s\"
