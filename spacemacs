@@ -163,6 +163,16 @@ before layers configuration."
    ;; specified with an installed package.
    ;; Not used for now.
    dotspacemacs-default-package-repository nil
+
+   ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
+   ;; derivatives. If set to `relative', also turns on relative line numbers.
+   ;; (default nil)
+   dotspacemacs-line-numbers 'relative
+
+   ;; Delete whitespace while saving buffer. Possible values are `all',
+   ;; `trailing', `changed' or `nil'. Default is `changed' (cleanup whitespace
+   ;; on changed lines) (default 'changed)
+   dotspacemacs-whitespace-cleanup 'changed
    )
   ;; User initialization goes here
   )
@@ -176,15 +186,7 @@ layers configuration."
   (add-hook 'projectile-mode-hook 'projectile-rails-on)
   (setq ruby-insert-encoding-magic-comment nil)
 
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
   (setq web-mode-markup-indent-offset 2)
-
-  ;; Linum-relative by default
-  (setq linum-relative-current-symbol "")
-  (global-linum-mode)
-  (with-eval-after-load 'linum
-    (linum-relative-toggle))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
