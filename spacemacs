@@ -187,6 +187,10 @@ layers configuration."
   (setq ruby-insert-encoding-magic-comment nil)
 
   (setq web-mode-markup-indent-offset 2)
+
+  (spacemacs/toggle-golden-ratio-on)
+  (spacemacs/toggle-indent-guide-globally-on)
+  (spacemacs/toggle-centered-point-globally-on)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
