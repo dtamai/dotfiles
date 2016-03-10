@@ -16,6 +16,9 @@ fi
 alias ls="ls --color"
 alias ll="ls -lah --group-directories-first"
 alias grep="grep --color"
+alias dps="docker ps --format \"table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}\""
+alias dpsa="docker ps -a --format \"table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}\""
+alias dstop="docker stop $(docker ps -q)"
 
 function h {
   history | tail -n 10
