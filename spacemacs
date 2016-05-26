@@ -24,6 +24,7 @@
      better-defaults
      company-mode
      ruby-on-rails
+     yaml
      erlang
      elixir
      git
@@ -38,6 +39,7 @@
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      version-control
+     emoji
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -77,6 +79,7 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         material
                          monokai
                          spacemacs-dark
                          spacemacs-light
@@ -187,6 +190,7 @@ layers configuration."
   (setq ruby-insert-encoding-magic-comment nil)
 
   (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
 
   (spacemacs/toggle-golden-ratio-on)
   (spacemacs/toggle-indent-guide-globally-on)
@@ -212,11 +216,3 @@ layers configuration."
    (quote
     (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" ".gem")))
  '(ring-bell-function (quote ignore) t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((((class color) (min-colors 257)) (:foreground "#F8F8F2" :background "#272822")) (((class color) (min-colors 89)) (:foreground "#F5F5F5" :background "#1B1E1C"))))
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
