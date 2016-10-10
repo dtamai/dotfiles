@@ -1,20 +1,26 @@
 {
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
 	"caret_style": "wide",
 	"color_inactive_tabs": true,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Inconsolata",
-	"font_size": 16,
+	"font_face": "Luxi Mono",
+	"font_size": 15,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"overlay_scroll_bars": "enabled",
 	"sidebar_size_14": true,
 	"status_bar_brighter": true,
 	"tab_size": 2,
 	"tabs_small": true,
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

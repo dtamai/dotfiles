@@ -79,6 +79,8 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         gruvbox
+                         subatomic256
                          material
                          monokai
                          spacemacs-dark
@@ -192,9 +194,10 @@ layers configuration."
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
 
+  (setq-default line-spacing 8)
+
   (spacemacs/toggle-golden-ratio-on)
   (spacemacs/toggle-indent-guide-globally-on)
-  (spacemacs/toggle-centered-point-globally-on)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

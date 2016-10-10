@@ -51,3 +51,5 @@
 [rebase]
 	autoSquash = true
 	autoStash = true
+[diff]
+  compactionHeuristic = true
