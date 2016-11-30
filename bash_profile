@@ -227,13 +227,7 @@ __job_count()
 
 __time()
 {
-  local t=""
-  if [ -n "$TMUX" ]; then
-    t=$BCyan時$Color_Off
-  else
-    t=$BCyan$Time12h$Color_Off
-  fi
-  echo "$t"
+  echo "$BCyan$Time12h$Color_Off"
 }
 
 export PS1="$(__time)"' $(__git_svn_ps1) '$BYellow$PathShort$Color_Off' $(__job_count) '"$Yellow$HOSTNAME$Color_Off \n\$ "
