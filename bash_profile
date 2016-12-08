@@ -158,54 +158,12 @@ __git_branch ()
   fi
 }
 
-# Outputs the current trunk, branch, or tag
-__svn_branch()
-{
-  local url=
-  if [[ -d .svn ]]; then
-    url=`svn info | awk '/URL:/ {print $2}'`
-    if [[ $url =~ trunk ]]; then
-      echo trunk
-    elif [[ $url =~ /branches/ ]]; then
-      echo "branch `echo $url | sed -e 's#.*branches\(.*\)/#\1#'`"
-    elif [[ $url =~ /tags/ ]]; then
-      echo "tag `echo $url | sed -e 's#.*tags/(.*\)/#\1#'`"
-    fi
-  fi
-}
-
-#export SVN_SHOWDIRTYSTATE=1
-# Outputs the current revision
-__svn_rev()
-{
-  echo $(svn info | awk '/Revisão:/ {print $2}')
-}
-
-__svn_ps1()
-{
-  local __ps1
-  if [ ! -z $SVN_SHOWDIRTYSTATE ]; then
-    local svnst flag
-    svnst=$(svn status | grep '^\s*[?ACDMR?!]')
-    if [ -z "$svnst" ]; then
-      __ps1=$Green'('$(__svn_branch):$(__svn_rev)')'
-    else
-      __ps1=$IRed'{'$(__svn_branch):$(__svn_rev)'}'
-    fi
-  else
-    __ps1='('$(__svn_branch):$(__svn_rev)')'
-  fi
-  echo -e "$__ps1"
-}
-
 # Git/Subversion prompt function
-__git_svn_ps1()
+__vc_ps1()
 {
   local s=$Yellow∅$Color_Off
   if [[ -a ".git" ]]; then
     s=`__git_ps1`
-  elif [[ -d ".svn" ]]; then
-    s=`__svn_ps1`
   fi
   echo -ne "$s"
 }
@@ -230,27 +188,12 @@ __time()
   echo "$BCyan$Time12h$Color_Off"
 }
 
-export PS1="$(__time)"' $(__git_svn_ps1) '$BYellow$PathShort$Color_Off' $(__job_count) '"$Yellow$HOSTNAME$Color_Off \n\$ "
+export PS1="$(__time)"' $(__vc_ps1) '$BYellow$PathShort$Color_Off' $(__job_count) '"$Yellow$HOSTNAME$Color_Off \n\$ "
 
 # Função para mudar o título da janela
 function settitle
 {
   echo -ne "\e]2;$@\a\e]1;$@\a";
-}
-
-function sohtopipe
-{
-  sed 's/\x01/|/g';
-}
-
-function fixtail
-{
-  tail -f $1 | sed 's/\x01/|/g';
-}
-
-function fixgrep
-{
-  grep $1 $2 | sed -e 's/\x01/|/g' -e ''/$1/s//`printf "$BIGreen$1$Color_Off"`/'';
 }
 
 function tmux()
