@@ -314,7 +314,8 @@ you should place your code here."
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
 
-  (setq-default line-spacing 8)
+  (setq-default line-spacing 8
+                js-indent-level 2)
 
   (spacemacs/toggle-golden-ratio-on)
   (spacemacs/toggle-indent-guide-globally-on)
