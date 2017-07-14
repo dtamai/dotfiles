@@ -53,3 +53,5 @@
 	autoStash = true
 [diff]
   compactionHeuristic = true
+[init]
+	templatedir = ~/.git_template
