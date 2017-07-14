@@ -207,3 +207,5 @@ source /usr/local/share/chruby/chruby.sh
 chruby 2.3.1
 source /usr/local/share/gem_home/gem_home.sh
 eval "$(direnv hook bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
