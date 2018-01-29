@@ -12,6 +12,10 @@ bind "set completion-query-items 20"
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+# set PATH so it includes user's dropbox private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/Dropbox/bin:$PATH"
+fi
 
 alias ls="ls --color"
 alias ll="ls -lah --group-directories-first"
@@ -29,7 +33,8 @@ function h {
 
 export HISTIGNORE="&:cd ~:cd ..:exit:h:history:??"
 export HISTCONTROL=ignoreboth:erasedups
-export HISTFILESIZE=10000
+export HISTSIZE=10000
+export HISTFILESIZE=50000
 
 export EDITOR=vim
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
@@ -204,8 +209,16 @@ function tmux()
 }
 
 source /usr/local/share/chruby/chruby.sh
-chruby 2.3.1
+chruby 2.5.0
 source /usr/local/share/gem_home/gem_home.sh
 eval "$(direnv hook bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export GOPATH=$HOME/c/go
+export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/tamai/apps/google-cloud-sdk/path.bash.inc' ]; then source '/home/tamai/apps/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/tamai/apps/google-cloud-sdk/completion.bash.inc' ]; then source '/home/tamai/apps/google-cloud-sdk/completion.bash.inc'; fi

@@ -24,6 +24,7 @@ values."
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation t
+
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
@@ -31,6 +32,10 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     go
+     javascript
+     elm
+     csv
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -39,7 +44,6 @@ values."
      helm
      auto-completion
      better-defaults
-     emacs-lisp
      git
      markdown
      emacs-lisp
@@ -57,6 +61,7 @@ values."
      syntax-checking
      version-control
      emoji
+     docker
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -91,7 +96,7 @@ values."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https nil
+   dotspacemacs-elpa-https t
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
    ;; If non nil then spacemacs will check for updates at startup
@@ -140,9 +145,9 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("M+ 1m"
                                :size 22
-                               :weight semi-light
+                               :weight light
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -313,6 +318,8 @@ you should place your code here."
 
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
+  (setq persp-auto-save-opt 0)
+  (setq elm-format-on-save t)
 
   (setq-default line-spacing 8
                 js-indent-level 2)
