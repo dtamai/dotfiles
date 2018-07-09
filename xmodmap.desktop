@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=xmodmap
+GenericName=xmodmap
+Comment=Keyboard remapping
+Exec=xmodmap ~/.xmodmap
+Type=Application
+Terminal=false
+Categories=Configuration;
+StartupNotify=false
+X-GNOME-Autostart-Delay=10
