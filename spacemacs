@@ -35,9 +35,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers
    '(
      sql
-     clojure
      rust
-     go
      javascript
      elm
      csv
@@ -52,7 +50,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      markdown
-     multiple-cursors
+     ;; multiple-cursors
      neotree
      org
      ruby-on-rails
@@ -60,14 +58,13 @@ This function should only modify configuration layer settings."
      dash
      colors
      html
-     themes-megapack
+     ;; themes-megapack
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
      version-control
-     emoji
      docker
      )
 
@@ -221,7 +218,7 @@ It should only modify the values of Spacemacs settings."
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Variable"
                                :size 18
-                               :weight light
+                               :weight normal
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -485,6 +482,8 @@ you should place your code here."
   (spacemacs/toggle-golden-ratio-on)
   (spacemacs/toggle-indent-guide-globally-on)
   (spaceline-toggle-minor-modes-off)
+
+  (setq rust-format-on-save t)
 
   (setenv "VISUAL" "emacsclient")
   (setenv "EDITOR" (getenv "VISUAL"))

@@ -40,6 +40,7 @@ shopt -s globstar
 if [ -d "$HOME/bin" ] ; then PATH="$HOME/bin:$PATH"; fi
 
 export EDITOR=vim
+export VISUAL=$EDITOR
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
     export TERM='xterm-256color'
 else

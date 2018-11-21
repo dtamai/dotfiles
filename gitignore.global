@@ -1,5 +1,4 @@
 .envrc
 .gem
 .rspec
-.rubocop.yml
 spec/custom_spec_helper.rb
