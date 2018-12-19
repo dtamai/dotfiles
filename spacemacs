@@ -66,6 +66,7 @@ This function should only modify configuration layer settings."
      syntax-checking
      version-control
      docker
+     terraform
      )
 
    ;; List of additional packages that will be installed without being

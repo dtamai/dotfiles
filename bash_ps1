@@ -128,6 +128,22 @@ __vc_ps1()
   echo -ne "$s"
 }
 
+__tf_workspace()
+{
+  if [ -f .terraform/environment ]; then
+    local workspace=$(cat .terraform/environment 2> /dev/null)
+
+    if [ "$workspace" == "production" ]; then
+      workspace=$Red$workspace$Color_Off
+    elif [ "$workspace" == "homolog" ]; then
+      workspace=$Yellow$workspace$Color_Off
+    else
+      workspace=$Green$workspace$Color_Off
+    fi
+    echo -e " |$workspace|"
+  fi
+}
+
 __job_count()
 {
   local j=$(jobs -s | wc -l)
@@ -148,4 +164,4 @@ __time()
   echo "$BCyan$Time12h$Color_Off"
 }
 
-export PS1="$(__time)"' $(__vc_ps1) '$BYellow$PathShort$Color_Off' $(__job_count) '"$Yellow$HOSTNAME$Color_Off \n\$ "
+export PS1="$(__time)"' $(__vc_ps1) '$BYellow$PathShort$Color_Off' $(__job_count) '$Yellow$HOSTNAME$Color_Off'$(__tf_workspace)'"\n\$ "
