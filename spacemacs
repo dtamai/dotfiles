@@ -470,10 +470,15 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq powerline-default-separator 'bar)
   (add-hook 'projectile-mode-hook 'projectile-rails-on)
+  (add-hook 'ruby-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+
   (setq ruby-insert-encoding-magic-comment nil)
 
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq css-indent-offset 2)
+
   (setq persp-auto-save-opt 0)
   (setq elm-format-on-save t)
 
