@@ -144,24 +144,9 @@ __tf_workspace()
   fi
 }
 
-__job_count()
-{
-  local j=$(jobs -s | wc -l)
-  if [ $j -eq 0 ]; then
-    j=$Green休$Color_Off
-  elif [ $j -eq 1 ]; then
-    j=$Cyan[$j]$Color_Off
-  elif [ $j -eq 2 ]; then
-    j=$Yellow[$j]$Color_Off
-  else
-    j=$Red{$j}$Color_Off
-  fi
-  echo -e "$j"
-}
-
 __time()
 {
   echo "$BCyan$Time12h$Color_Off"
 }
 
-export PS1="$(__time)"' $(__vc_ps1) '$BYellow$PathShort$Color_Off' $(__job_count) '$Yellow$HOSTNAME$Color_Off'$(__tf_workspace)'"\n\$ "
+export PS1="$(__time)"' $(__vc_ps1) '$BYellow$PathShort$Color_Off' '$Yellow$HOSTNAME$Color_Off'$(__tf_workspace)'"\n\$ "

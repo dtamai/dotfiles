@@ -63,7 +63,10 @@ fi
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # Customize prompt
- [ -f ~/.bash_ps1 ] && source ~/.bash_ps1
+[ -f ~/.bash_ps1 ] && source ~/.bash_ps1
+
+# Local configurations
+[ -f ~/.bashrc.local ] && source ~/.bashrc.local
 
 function tmux()
 {
