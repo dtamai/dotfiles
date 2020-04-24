@@ -1,0 +1,61 @@
+{
+    "workbench.colorTheme": "Noctis Viola",
+    "files.trimTrailingWhitespace": true,
+    "markdown.extension.toc.levels": "2..6",
+    "markdown.extension.toc.githubCompatibility": true,
+    "editor.fontSize": 18,
+    "ruby.intellisense": "rubyLocate",
+    "ruby.codeCompletion": "rcodetools", // use the internal language server (see below)
+    "ruby.lint": {
+        "rubocop": {
+            "useBundler": false // enable rubocop via bundler
+        }
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.lineNumbers": "relative",
+    "files.insertFinalNewline": true,
+    "ruby.format": "rubocop",
+    "editor.tabSize": 2,
+    "ruby.useLanguageServer": true,
+    "explorer.confirmDragAndDrop": false,
+    "files.exclude": {
+        ".envrc": true,
+        ".gem": true,
+        "**/build": true,
+        "**/coverage": true,
+        "**/node_modules/**": true
+    },
+    "workbench.editor.enablePreview": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "explorer.confirmDelete": false,
+    "window.zoomLevel": 0,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.format.semicolons": "insert",
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": []
+    },
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 5,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        }
+    ],
+    "editor.fontFamily": "'Lilex', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+}
