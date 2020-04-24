@@ -25,3 +25,5 @@
       css-indent-offset 2)
 
 (setq-default display-line-numbers-type 'relative)
+(setq enh-ruby-add-encoding-comment-on-save nil)
+(setq ruby-insert-encoding-magic-comment nil)
