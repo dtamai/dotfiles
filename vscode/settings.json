@@ -61,5 +61,6 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "workbench.iconTheme": "vscode-great-icons",
-    "workbench.editor.highlightModifiedTabs": true
+    "workbench.editor.highlightModifiedTabs": true,
+    "cargo.automaticCheck": false
 }

@@ -8,6 +8,7 @@ firsttris.vscode-jest-runner
 kaiwood.endwise
 liviuschera.noctis
 mathiasfrohlich.Kotlin
+matklad.rust-analyzer
 mauve.terraform
 mikestead.dotenv
 mohsen1.prettify-json
@@ -17,7 +18,6 @@ npxms.hide-gitignored
 panicbit.cargo
 rebornix.ruby
 Rubymaniac.vscode-direnv
-rust-lang.rust
 serayuzgur.crates
 sianglim.slim
 stevencl.addDocComments
