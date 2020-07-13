@@ -44,8 +44,10 @@
         ]
     },
     "terraform.languageServer": {
-        "enabled": true,
-        "args": []
+        "external": true,
+        "args": [
+            "serve"
+        ]
     },
     "workbench.editor.limit.perEditorGroup": true,
     "workbench.editor.limit.enabled": true,
@@ -62,5 +64,6 @@
     "editor.formatOnPaste": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.editor.highlightModifiedTabs": true,
-    "cargo.automaticCheck": false
+    "cargo.automaticCheck": false,
+    "typescript.preferences.quoteStyle": "single"
 }
