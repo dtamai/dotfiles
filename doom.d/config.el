@@ -27,3 +27,9 @@
 (setq-default display-line-numbers-type 'relative)
 (setq enh-ruby-add-encoding-comment-on-save nil)
 (setq ruby-insert-encoding-magic-comment nil)
+
+;; Go config
+(add-hook 'go-mode-hook
+          (lambda ()
+            (lsp-deferred)
+            (add-hook 'before-save-hook 'gofmt-before-save)))

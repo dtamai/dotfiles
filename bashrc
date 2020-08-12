@@ -86,6 +86,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 
 if [ -d "$HOME/.cargo/bin" ]; then PATH="$HOME/.cargo/bin:$PATH"; fi
+if [ -d "$HOME/go/bin" ]; then PATH="$HOME/go/bin:$PATH"; fi
 
 # Local configurations
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local

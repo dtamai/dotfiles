@@ -23,7 +23,8 @@
         ".gem": true,
         "**/build": true,
         "**/coverage": true,
-        "**/node_modules/**": true
+        "**/node_modules/**": true,
+        "**/.direnv/**": true,
     },
     "workbench.editor.enablePreview": false,
     "gitlens.currentLine.enabled": false,
@@ -65,5 +66,10 @@
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.editor.highlightModifiedTabs": true,
     "cargo.automaticCheck": false,
-    "typescript.preferences.quoteStyle": "single"
+    "typescript.preferences.quoteStyle": "single",
+    "go.formatTool": "goimports",
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": true
+    }
 }
