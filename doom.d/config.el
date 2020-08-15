@@ -2,8 +2,8 @@
 
 ;; Place your private configuration here
 
-(set-frame-font "Source Code Variable")
-(set-face-attribute 'default nil :height 140)
+(set-frame-font "Lilex Light")
+(set-face-attribute 'default nil :height 180)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
