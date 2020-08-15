@@ -71,8 +71,8 @@
        ;;ansible
        ;;debugger          ; FIXME stepping through code, to help you add bugs
        direnv
-       ;;docker
-       ;;editorconfig      ; let someone else argue about tabs vs spaces
+       docker
+       editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        eval              ; run code, run (also, repls)
        flycheck          ; tasing you for every semicolon you forget
@@ -106,7 +106,7 @@
        ;;erlang            ; an elegant language for a more civilized age
        ;;elixir            ; erlang done right
        ;;elm               ; care for a cup of TEA?
-       emacs-lisp        ; drown in parentheses
+       ;;emacs-lisp        ; drown in parentheses
        ;;ess               ; emacs speaks statistics
        ;;fsharp           ; ML stands for Microsoft's Language
        go +lsp                ; the hipster dialect
@@ -185,7 +185,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((magit-todos-exclude-globs "vendor")))))
+ '(safe-local-variable-values (quote ((magit-todos-exclude-globs "vendor/")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

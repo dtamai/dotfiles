@@ -1,23 +1,22 @@
 {
-    "workbench.colorTheme": "Noctis Viola",
-    "files.trimTrailingWhitespace": true,
-    "markdown.extension.toc.levels": "2..6",
-    "markdown.extension.toc.githubCompatibility": true,
-    "editor.fontSize": 18,
-    "ruby.intellisense": "rubyLocate",
-    "ruby.codeCompletion": "rcodetools", // use the internal language server (see below)
-    "ruby.lint": {
-        "rubocop": {
-            "useBundler": false // enable rubocop via bundler
-        }
-    },
+    "cargo.automaticCheck": false,
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.fontFamily": "'Lilex', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 18,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
-    "files.insertFinalNewline": true,
-    "ruby.format": "rubocop",
     "editor.tabSize": 2,
-    "ruby.useLanguageServer": true,
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        }
+    ],
+    "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "files.exclude": {
         ".envrc": true,
         ".gem": true,
@@ -26,15 +25,21 @@
         "**/node_modules/**": true,
         "**/.direnv/**": true,
     },
-    "workbench.editor.enablePreview": false,
+    "gitlens.codeLens.enabled": false,
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
     "gitlens.statusBar.enabled": false,
-    "explorer.confirmDelete": false,
-    "window.zoomLevel": 0,
-    "javascript.updateImportsOnFileMove.enabled": "always",
+    "go.formatTool": "goimports",
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": true
+    },
     "javascript.format.semicolons": "insert",
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "markdown.extension.toc.githubCompatibility": true,
+    "markdown.extension.toc.levels": "2..6",
+    "rust-analyzer.updates.channel": "nightly",
     "terraform.indexing": {
         "enabled": false,
         "liveIndexing": false,
@@ -50,26 +55,15 @@
             "serve"
         ]
     },
-    "workbench.editor.limit.perEditorGroup": true,
-    "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.value": 5,
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "eslint.workingDirectories": [
-        {
-            "mode": "auto"
-        }
-    ],
-    "editor.fontFamily": "'Lilex', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontLigatures": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "workbench.iconTheme": "vscode-great-icons",
-    "workbench.editor.highlightModifiedTabs": true,
-    "cargo.automaticCheck": false,
     "typescript.preferences.quoteStyle": "single",
-    "go.formatTool": "goimports",
-    "go.enableCodeLens": {
-        "references": false,
-        "runtest": true
-    }
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Noctis Viola",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.value": 5,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.iconTheme": "vscode-great-icons"
 }
