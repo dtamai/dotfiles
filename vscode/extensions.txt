@@ -1,3 +1,4 @@
+bradzacher.vscode-coloured-status-bar-problems
 bungcip.better-toml
 DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
@@ -5,15 +6,19 @@ eamodio.gitlens
 EditorConfig.EditorConfig
 emmanuelbeziat.vscode-great-icons
 firsttris.vscode-jest-runner
+golang.go
+GraphQL.vscode-graphql
 kaiwood.endwise
 liviuschera.noctis
 mathiasfrohlich.Kotlin
 matklad.rust-analyzer
-mauve.terraform
+mechatroner.rainbow-csv
 mikestead.dotenv
 mohsen1.prettify-json
 ms-azuretools.vscode-docker
 ms-python.python
+ms-vscode-remote.remote-containers
+ms-vsliveshare.vsliveshare
 npxms.hide-gitignored
 panicbit.cargo
 rebornix.ruby
@@ -22,7 +27,9 @@ serayuzgur.crates
 sianglim.slim
 stevencl.addDocComments
 timonwong.shellcheck
+vadimcn.vscode-lldb
 vscodevim.vim
+wayou.vscode-todo-highlight
 wingrunr21.vscode-ruby
 wwm.better-align
 yzhang.markdown-all-in-one

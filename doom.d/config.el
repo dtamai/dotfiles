@@ -5,31 +5,9 @@
 (set-frame-font "Lilex Light")
 (set-face-attribute 'default nil :height 180)
 
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "tsx" (file-name-extension buffer-file-name))
-              (tide-setup)
-              (flycheck-mode +1)
-              (eldoc-mode +1) )))
-
-(setq rust-format-on-save t)
 (setq persp-auto-save-opt 0)
-(setq-default line-spacing 8
-              js-indent-level 2)
-
-(setq web-mode-markup-indent-offset 2
-      web-mode-code-indent-offset 2
-      web-mode-css-indent-offset 2
-      css-indent-offset 2)
+(setq-default line-spacing 8)
 
 (setq-default display-line-numbers-type 'relative)
 (setq enh-ruby-add-encoding-comment-on-save nil)
 (setq ruby-insert-encoding-magic-comment nil)
-
-;; Go config
-(add-hook 'go-mode-hook
-          (lambda ()
-            (lsp-deferred)
-            (add-hook 'before-save-hook 'gofmt-before-save)))

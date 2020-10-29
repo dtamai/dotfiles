@@ -1,6 +1,7 @@
 {
     "cargo.automaticCheck": false,
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.columnSelection": false,
     "editor.fontFamily": "'Lilex', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "editor.fontSize": 18,
@@ -15,55 +16,38 @@
     ],
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
     "files.exclude": {
-        ".envrc": true,
-        ".gem": true,
-        "**/build": true,
+        "**/.direnv/**": true,
         "**/coverage": true,
         "**/node_modules/**": true,
-        "**/.direnv/**": true,
+        ".envrc": true,
+        ".gem": true
     },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "gitlens.codeLens.enabled": false,
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.statusBar.enabled": false,
-    "go.formatTool": "goimports",
+    "go.coverOnTestPackage": false,
     "go.enableCodeLens": {
         "references": false,
         "runtest": true
     },
+    "go.formatTool": "goimports",
+    "go.lintTool": "golangci-lint",
     "javascript.format.semicolons": "insert",
     "javascript.preferences.quoteStyle": "single",
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "markdown.extension.toc.githubCompatibility": true,
     "markdown.extension.toc.levels": "2..6",
     "rust-analyzer.updates.channel": "nightly",
-    "terraform.indexing": {
-        "enabled": false,
-        "liveIndexing": false,
-        "delay": 500,
-        "exclude": [
-            ".terraform/**/*",
-            "**/.terraform/**/*"
-        ]
-    },
-    "terraform.languageServer": {
-        "external": true,
-        "args": [
-            "serve"
-        ]
-    },
     "typescript.preferences.quoteStyle": "single",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Noctis Viola",
+    "workbench.colorTheme": "Noctis Uva",
     "workbench.editor.enablePreview": false,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.perEditorGroup": true,
-    "workbench.editor.limit.value": 5,
-    "workbench.editor.highlightModifiedTabs": true,
     "workbench.iconTheme": "vscode-great-icons"
 }
