@@ -9,11 +9,6 @@
     "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
     "editor.tabSize": 2,
-    "eslint.workingDirectories": [
-        {
-            "mode": "auto"
-        }
-    ],
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "files.exclude": {
@@ -43,7 +38,6 @@
     "rust-analyzer.updates.channel": "nightly",
     "typescript.preferences.quoteStyle": "single",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "window.zoomLevel": 0,
     "workbench.colorTheme": "Noctis Uva",
     "workbench.editor.enablePreview": false,
     "workbench.editor.highlightModifiedTabs": true,
