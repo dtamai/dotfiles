@@ -1,5 +1,8 @@
 bradzacher.vscode-coloured-status-bar-problems
 bungcip.better-toml
+christian-kohler.npm-intellisense
+christian-kohler.path-intellisense
+CoenraadS.bracket-pair-colorizer-2
 DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
 eamodio.gitlens
@@ -10,7 +13,6 @@ golang.go
 GraphQL.vscode-graphql
 kaiwood.endwise
 liviuschera.noctis
-mathiasfrohlich.Kotlin
 matklad.rust-analyzer
 mechatroner.rainbow-csv
 mikestead.dotenv
@@ -24,8 +26,6 @@ panicbit.cargo
 rebornix.ruby
 Rubymaniac.vscode-direnv
 serayuzgur.crates
-sianglim.slim
-stevencl.addDocComments
 timonwong.shellcheck
 vadimcn.vscode-lldb
 vscodevim.vim
