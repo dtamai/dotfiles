@@ -1,6 +1,12 @@
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/gem_home/gem_home.sh
 
+use_nodejs() {
+  NODE_VERSION="$1"
+
+  PATH_add ~/apps/node-v"$NODE_VERSION"-linux-x64/bin
+}
+
 use_pyenv() {
   unset PYENV_VERSION
   # Because each python version is prepended to the PATH, add them in reverse order

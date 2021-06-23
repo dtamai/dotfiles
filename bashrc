@@ -93,3 +93,6 @@ if [ -d "$HOME/go/bin" ]; then PATH="$HOME/go/bin:$PATH"; fi
 
 # Local configurations
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
