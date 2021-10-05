@@ -58,10 +58,11 @@
     "rust-analyzer.updates.channel": "nightly",
     "typescript.preferences.quoteStyle": "single",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "workbench.colorTheme": "Noctis Uva",
     "workbench.editor.enablePreview": false,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.perEditorGroup": true,
-    "workbench.iconTheme": "vscode-great-icons"
+    "workbench.colorTheme": "Eva Dark Italic",
+    "workbench.iconTheme": "material-icon-theme",
+    "git.autofetch": true
 }
