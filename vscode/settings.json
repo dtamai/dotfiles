@@ -11,6 +11,7 @@
     "editor.guides.bracketPairs":"active",
     "editor.lineNumbers": "relative",
     "editor.tabSize": 2,
+    "eslint.format.enable": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "files.exclude": {

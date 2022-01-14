@@ -2,15 +2,17 @@ bradzacher.vscode-coloured-status-bar-problems
 bungcip.better-toml
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
-CoenraadS.bracket-pair-colorizer-2
 DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
 eamodio.gitlens
 EditorConfig.EditorConfig
-emmanuelbeziat.vscode-great-icons
+esbenp.prettier-vscode
+felixjb.testify
 firsttris.vscode-jest-runner
 fisheva.eva-theme
+GitHub.vscode-pull-request-github
 golang.go
+humao.rest-client
 kaiwood.endwise
 matklad.rust-analyzer
 mechatroner.rainbow-csv
@@ -23,6 +25,7 @@ ms-vscode-remote.remote-containers
 ms-vsliveshare.vsliveshare
 npxms.hide-gitignored
 panicbit.cargo
+PKief.material-icon-theme
 rebornix.ruby
 Rubymaniac.vscode-direnv
 serayuzgur.crates
