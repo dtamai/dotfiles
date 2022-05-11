@@ -65,6 +65,8 @@ fi
 # Customize prompt
 [ -f ~/.bash_ps1 ] && source ~/.bash_ps1
 
+export GPG_TTY=$(tty)
+
 function tmux()
 {
     TMUX_BIN=`which tmux`
@@ -85,10 +87,13 @@ export FZF_DEFAULT_COMMAND="fd --type file"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 
+# Rust
 if [ -d "$HOME/.cargo/bin" ]; then
     PATH="$HOME/.cargo/bin:$PATH"
     export CARGO_TARGET_DIR=~/.cargo/build
 fi
+
+# Go
 if [ -d "$HOME/go/bin" ]; then PATH="$HOME/go/bin:$PATH"; fi
 
 # Local configurations
@@ -96,3 +101,6 @@ if [ -d "$HOME/go/bin" ]; then PATH="$HOME/go/bin:$PATH"; fi
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
+
+#kubectx and kubens
+if [ -d "$HOME/.kubectx" ]; then PATH="$HOME/.kubectx:$PATH"; fi

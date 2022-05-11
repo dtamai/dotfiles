@@ -1,5 +1,4 @@
 bradlc.vscode-tailwindcss
-bradzacher.vscode-coloured-status-bar-problems
 bungcip.better-toml
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
@@ -16,7 +15,6 @@ fisheva.eva-theme
 golang.go
 GraphQL.vscode-graphql
 hashicorp.terraform
-kaiwood.endwise
 matklad.rust-analyzer
 mattn.Lisp
 mechatroner.rainbow-csv
@@ -29,14 +27,14 @@ ms-vscode-remote.remote-containers
 ms-vsliveshare.vsliveshare
 npxms.hide-gitignored
 panicbit.cargo
-rebornix.ruby
 Rubymaniac.vscode-direnv
 serayuzgur.crates
 stevencl.addDocComments
+streetsidesoftware.code-spell-checker
 timonwong.shellcheck
+usernamehw.errorlens
 vadimcn.vscode-lldb
 vscodevim.vim
 wayou.vscode-todo-highlight
-wingrunr21.vscode-ruby
 wwm.better-align
 yzhang.markdown-all-in-one
