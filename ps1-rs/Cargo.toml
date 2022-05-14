@@ -1,0 +1,11 @@
+[package]
+name = "ps1-rs"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+strip = true
+
+[dependencies]
+chrono = "0.4.19"
+home = "0.5.3"

@@ -1,5 +1,5 @@
 function prompt_function {
   RET=$?
-  PS1="$(ps1-go "${RET}")\n$ "
+  PS1="$(ps1-rs "${RET}")\n$ "
 }
 PROMPT_COMMAND=prompt_function
