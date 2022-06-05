@@ -1,10 +1,21 @@
+#! /usr/bin/env/bash
+
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/gem_home/gem_home.sh
 
 use_nodejs() {
   NODE_VERSION="$1"
 
-  PATH_add ~/apps/node-v"$NODE_VERSION"-linux-x64/bin
+  local short_path=$HOME/apps/node$NODE_VERSION""
+  if [[ -d $short_path ]]; then
+    PATH_add "$short_path"/bin
+    return 0
+  fi
+
+  local full_path
+  full_path=$(ls -d ~/apps/node-v"$NODE_VERSION"*)
+
+  PATH_add "$full_path"/bin
 }
 
 use_pyenv() {

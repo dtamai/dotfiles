@@ -64,6 +64,9 @@
   "rust-analyzer.imports.granularity.group": "module",
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+  "shellcheck.customArgs": [
+    "-x"
+  ],
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.preferences.quoteStyle": "single",
