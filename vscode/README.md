@@ -8,7 +8,7 @@ Pra atualizar a lista:
 code --list-extensions > extensions.txt
 ```
 
-Pra instalar as extensões (segundo SO, não testei):
+Pra instalar as extensões:
 
 ```bash
 cat extensions.txt | xargs -n 1 code --install-extension
