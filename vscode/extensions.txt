@@ -11,11 +11,9 @@ EliverLara.sweet-vscode-icons
 esbenp.prettier-vscode
 felixjb.testify
 firsttris.vscode-jest-runner
-fisheva.eva-theme
 golang.go
-GraphQL.vscode-graphql
 hashicorp.terraform
-matklad.rust-analyzer
+johndugan.contrast-theme
 mattn.Lisp
 mechatroner.rainbow-csv
 mikestead.dotenv
@@ -25,9 +23,12 @@ ms-python.python
 ms-python.vscode-pylance
 ms-vscode-remote.remote-containers
 ms-vsliveshare.vsliveshare
+mskelton.npm-outdated
 npxms.hide-gitignored
 panicbit.cargo
 Rubymaniac.vscode-direnv
+rust-lang.rust-analyzer
+ryu1kn.partial-diff
 serayuzgur.crates
 stevencl.addDocComments
 streetsidesoftware.code-spell-checker

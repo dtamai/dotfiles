@@ -11,14 +11,12 @@
   "editor.guides.bracketPairs": "active",
   "editor.inlayHints.fontSize": 12,
   "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.size": "fit",
   "editor.tabSize": 2,
   "editor.inlayHints.fontFamily": "Lilex Light",
-  "errorLens.enabledDiagnosticLevels": [
-    "error",
-    "warning",
-    "info",
-    "hint"
-  ],
+  "errorLens.enabledDiagnosticLevels": ["error", "warning", "info", "hint"],
   "errorLens.followCursor": "closestProblem",
   "errorLens.fontSize": "14",
   "errorLens.fontStyleItalic": true,
@@ -57,16 +55,11 @@
   "javascript.preferences.quoteStyle": "single",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "markdown.extension.toc.levels": "2..6",
-  "outline.showProperties": false,
-  "outline.showVariables": false,
-  "outline.showFunctions": false,
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.imports.granularity.group": "module",
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
-  "shellcheck.customArgs": [
-    "-x"
-  ],
+  "shellcheck.customArgs": ["-x"],
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.preferences.quoteStyle": "single",
@@ -75,10 +68,26 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.useCtrlKeys": false,
   "vim.useSystemClipboard": true,
-  "workbench.colorTheme": "Eva Dark Italic",
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.iconTheme": "sweet-vscode-icons",
+  "workbench.startupEditor": "none",
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "name": "custom-dictionary-user",
+      "path": "~/.cspell/custom-dictionary-user.txt",
+      "addWords": true,
+      "scope": "user"
+    }
+  },
+  "window.commandCenter": true,
+  "window.titleBarStyle": "custom",
+  "workbench.editor.limit.excludeDirty": true,
+  "workbench.editor.showTabs": false,
+  "outline.showFunctions": false,
+  "outline.showProperties": false,
+  "outline.showVariables": false,
+  "workbench.colorTheme": "Contrast"
 }
