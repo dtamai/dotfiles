@@ -100,7 +100,7 @@ if [ -d "$HOME/go/bin" ]; then PATH="$HOME/go/bin:$PATH"; fi
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
+eval "$(atuin init bash --disable-up-arrow)"
 
 #kubectx and kubens
 if [ -d "$HOME/.kubectx" ]; then PATH="$HOME/.kubectx:$PATH"; fi

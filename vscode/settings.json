@@ -3,7 +3,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.columnSelection": false,
-  "editor.fontFamily": "'Lilex Medium', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontFamily": "'IntelOne Mono', 'Lilex Medium', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
   "editor.formatOnPaste": true,
@@ -55,9 +55,7 @@
   "javascript.preferences.quoteStyle": "single",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "markdown.extension.toc.levels": "2..6",
-  "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.imports.granularity.group": "module",
-  "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
   "shellcheck.customArgs": ["-x"],
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
@@ -89,5 +87,37 @@
   "outline.showFunctions": false,
   "outline.showProperties": false,
   "outline.showVariables": false,
-  "workbench.colorTheme": "Contrast"
+  "workbench.colorTheme": "Contrast",
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "editor.formatOnSave": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "git.confirmSync": false,
+  "files.associations": {
+    "*.css": "scss"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnType": true
+  },
+  "python.formatting.provider": "black",
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+  "[typescript]": {},
+  "rust-analyzer.check.command": "clippy",
+  "[json]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "editor.inlayHints.padding": true,
+  "editor.fontWeight": "500",
+  "workbench.colorCustomizations": {
+    "editorInlayHint.background": "#0e770e"
+  }
 }
