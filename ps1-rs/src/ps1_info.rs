@@ -1,8 +1,9 @@
-use chrono::prelude::*;
-
 use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::{env, fs};
+
+use time::macros::format_description;
+use time::OffsetDateTime;
 
 const FG_RESET: &str = "\x1b[0;0m";
 const FG_RED: &str = "\x1b[31m";
@@ -18,8 +19,9 @@ const SUPERSCRIPTS: [&str; 10] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", 
 fn time() -> String {
     let color = FG_CYAN;
 
-    let now = Local::now();
-    let now = now.format("%H:%M:%S");
+    let format = format_description!("[hour]:[minute]:[second]");
+    let now = OffsetDateTime::now_local().unwrap();
+    let now = now.format(format).unwrap();
 
     format!("{color}{now}")
 }
