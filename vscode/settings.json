@@ -1,21 +1,26 @@
 {
-  "cargo.automaticCheck": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.columnSelection": false,
   "editor.fontFamily": "'IntelOne Mono', 'Lilex Medium', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": true,
+  "editor.fontWeight": "500",
   "editor.fontSize": 18,
-  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
+  "editor.inlayHints.enabled": "onUnlessPressed",
+  "editor.inlayHints.fontFamily": "Lilex Light",
   "editor.inlayHints.fontSize": 12,
+  "editor.inlayHints.padding": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.size": "fit",
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true
+  },
   "editor.tabSize": 2,
-  "editor.inlayHints.fontFamily": "Lilex Light",
+  "editor.unicodeHighlight.nonBasicASCII": false,
   "errorLens.enabledDiagnosticLevels": ["error", "warning", "info", "hint"],
   "errorLens.followCursor": "closestProblem",
   "errorLens.fontSize": "14",
@@ -25,9 +30,12 @@
   "errorLens.statusBarIconsAtZero": "removeBackground",
   "errorLens.statusBarIconsEnabled": true,
   "errorLens.statusBarIconsUseBackground": false,
-  "eslint.format.enable": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "*.css": "scss"
+  },
   "files.exclude": {
     ".envrc": true,
     ".gem": true,
@@ -37,41 +45,39 @@
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+
+  "git.allowNoVerifyCommit": true,
   "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.avatars": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.statusBar.enabled": false,
-  "go.coverOnTestPackage": false,
-  "go.enableCodeLens": {
-    "references": false,
-    "runtest": true
-  },
-  "go.formatTool": "goimports",
-  "go.lintTool": "golangci-lint",
-  "go.toolsManagement.autoUpdate": true,
-  "javascript.format.semicolons": "insert",
-  "javascript.preferences.quoteStyle": "single",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "markdown.extension.toc.levels": "2..6",
-  "rust-analyzer.imports.granularity.group": "module",
-  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
-  "shellcheck.customArgs": ["-x"],
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.preferences.quoteStyle": "single",
-  "typescript.preferences.useAliasesForRenames": false,
-  "typescript.tsserver.maxTsServerMemory": 4096,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "outline.showFunctions": false,
+  "outline.showProperties": false,
+  "outline.showVariables": false,
   "vim.useCtrlKeys": false,
   "vim.useSystemClipboard": true,
+  "window.commandCenter": true,
+  "window.titleBarStyle": "custom",
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.excludeDirty": true,
   "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.showTabs": "single",
   "workbench.iconTheme": "sweet-vscode-icons",
   "workbench.startupEditor": "none",
+  "workbench.colorCustomizations": {
+    "editorInlayHint.background": "#0e770e",
+    "editorInlayHint.foreground": "#fff"
+  },
+  "workbench.colorTheme": "Contrast",
+
+
+  // Spell check
   "cSpell.customDictionaries": {
     "custom-dictionary-user": {
       "name": "custom-dictionary-user",
@@ -80,44 +86,92 @@
       "scope": "user"
     }
   },
-  "window.commandCenter": true,
-  "window.titleBarStyle": "custom",
-  "workbench.editor.limit.excludeDirty": true,
-  "workbench.editor.showTabs": false,
-  "outline.showFunctions": false,
-  "outline.showProperties": false,
-  "outline.showVariables": false,
-  "workbench.colorTheme": "Contrast",
-  "editor.semanticTokenColorCustomizations": {
-    "enabled": true
+  "cSpell.language": "en,pt,pt_BR",
+
+
+  // Go
+  "go.coverOnTestPackage": false,
+  "go.enableCodeLens": {
+    "references": false,
+    "runtest": true
   },
+  "go.formatTool": "goimports",
+  "go.lintTool": "golangci-lint",
+  "go.toolsManagement.autoUpdate": true,
+
+
+  // JS TS
+  "javascript.format.semicolons": "insert",
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "prettier.enable": false,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.useAliasesForRenames": false,
+  "typescript.tsserver.maxTsServerMemory": 4096,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
-  "editor.formatOnSave": true,
   "[javascriptreact]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
-  "git.confirmSync": false,
-  "files.associations": {
-    "*.css": "scss"
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+
+
+  // Rust
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.imports.granularity.group": "module",
+  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+
+
+  // Shell
+  "shellcheck.customArgs": ["-x"],
+
+
+  // Markdown
+  "markdown.extension.toc.levels": "2..6",
+
+
+  // Python
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnType": true
   },
-  "python.formatting.provider": "black",
-  "[rust]": {
-    "editor.tabSize": 4
+
+
+  // Presentation mode
+  "presentation-mode.active": {
+    "commands": ["workbench.action.closeSidebar"],
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": false,
+    "workbench.colorTheme": "Contrast",
+    "window.zoomLevel": 2
   },
-  "[typescript]": {},
-  "rust-analyzer.check.command": "clippy",
-  "[json]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  "presentation-mode.inactive": {
+    "commands": ["workbench.action.focusSideBar"]
   },
-  "editor.inlayHints.padding": true,
-  "editor.fontWeight": "500",
-  "workbench.colorCustomizations": {
-    "editorInlayHint.background": "#0e770e"
-  }
+
+
+  // TODOs
+  "todohighlight.keywords": [
+    {
+      "text": "NOTE:",
+      "color": "#ffffff",
+      "isWholeLine": true,
+      "backgroundColor": "#1a6343"
+    }
+  ]
 }

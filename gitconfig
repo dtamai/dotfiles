@@ -57,3 +57,5 @@
 	gpgsign = true
 [url "https://github"]
 	insteadOf = git://github
+[init]
+	defaultBranch = main
