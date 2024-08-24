@@ -8,3 +8,5 @@ alias dpsa "docker ps -a --format \"table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.I
 alias vim nvim
 
 alias tmux "direnv exec / tmux"
+
+alias lg lazygit
