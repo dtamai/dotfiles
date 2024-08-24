@@ -57,9 +57,20 @@ fn git_dir() -> Option<PathBuf> {
         match ancestors.next() {
             None => break None,
             Some(path) => {
-                let git_dir = path.join(".git");
-                if git_dir.is_dir() {
-                    break Some(git_dir);
+                let git_path = path.join(".git");
+                if git_path.is_dir() {
+                    break Some(git_path);
+                }
+
+                if git_path.is_file() {
+                    match std::fs::read_to_string(git_path) {
+                        Err(_) => break None,
+                        Ok(contents) => {
+                            if let Some((_, git_dir)) = contents.split_once("gitdir: ") {
+                                break Some(PathBuf::from(git_dir.trim()));
+                            }
+                        }
+                    }
                 }
             }
         };

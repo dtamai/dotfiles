@@ -7,9 +7,9 @@ edition = "2021"
 strip = true
 
 [dependencies]
-time = { version = "0.3.25", features = [
+time = { version = "0.3.36", features = [
   "formatting",
   "local-offset",
   "macros",
 ] }
-home = "0.5.5"
+home = "0.5.9"
