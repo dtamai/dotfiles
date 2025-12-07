@@ -44,6 +44,8 @@
 [core]
   excludesfile = ~/.gitignore.global
 	autocrlf = input
+[push]
+  autoSetupRemote = true
 [pull]
 	rebase = true
 [rerere]
