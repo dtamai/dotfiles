@@ -14,6 +14,8 @@ vim.opt.clipboard = "unnamedplus" -- Allow Neovim to use the system clipboard
 vim.opt.signcolumn = "yes" -- Always show the sign column
 vim.opt.completeopt = "noselect"
 vim.opt.cursorline = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Leader key
 vim.g.mapleader = " "
@@ -37,6 +39,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
+	{ src = "https://github.com/nvim-telescope/telescope-live-grep-args.nvim" },
 	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 	{ src = "https://github.com/folke/trouble.nvim" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -55,12 +58,16 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	{ src = "https://github.com/lewis6991/async.nvim" },
+	{ src = "https://github.com/ThePrimeagen/refactoring.nvim" },
 })
 
 -- ===========================================================================
 -- LSP (builtin vim.lsp)
 -- ===========================================================================
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
@@ -88,13 +95,43 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		javascript = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" },
+		javascriptreact = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" },
 		typescript = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" },
+		typescriptreact = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" },
 	},
 	format_on_save = {
 		timeout_ms = 2000,
 		lsp_format = "fallback",
 	},
 })
+
+local telescope = require("telescope")
+local lga_actions = require("telescope-live-grep-args.actions")
+telescope.setup({
+	defaults = {
+		layout_config = {
+			preview_width = 0.4,
+			horizontal = { width = 0.94, height = 0.94 },
+			vertical = { width = 0.94, height = 0.94 },
+		},
+	},
+	extensions = {
+		live_grep_args = {
+			auto_quoting = true, -- enable/disable auto-quoting
+			-- define mappings, e.g.
+			mappings = { -- extend mappings
+				i = {
+					["<C-k>"] = lga_actions.quote_prompt(),
+					["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+					["<C-t>"] = lga_actions.quote_prompt({ postfix = ' --iglob "!**/*.test.*"' }),
+					-- freeze the current list and start a fuzzy search in the frozen list
+					["<C-space>"] = lga_actions.to_fuzzy_refine,
+				},
+			},
+		},
+	},
+})
+telescope.load_extension("live_grep_args")
 
 require("toggleterm").setup()
 local Terminal = require("toggleterm.terminal").Terminal
@@ -163,7 +200,14 @@ cmp.setup({
 	}),
 })
 
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+	view = {
+		width = 50,
+	},
+	update_focused_file = {
+		enable = true,
+	},
+})
 
 require("nvim-surround").setup()
 
@@ -205,7 +249,6 @@ require("bufferline").setup({
 		},
 		separator_style = "thin",
 		diagnostics = "nvim_lsp",
-		sort_by = "relative_directory",
 		offsets = {
 			{
 				filetype = "NvimTree",
@@ -217,16 +260,26 @@ require("bufferline").setup({
 	},
 })
 
+require("refactoring").setup()
+
 -- ===========================================================================
 -- Keymaps
 -- ===========================================================================
 local set = vim.keymap.set
 local builtin = require("telescope.builtin")
+local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+set(
+	"n",
+	"<leader>fg",
+	":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+	{ desc = "Telescope live grep" }
+)
+set("n", "<leader>fc", live_grep_args_shortcuts.grep_word_under_cursor)
 set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 set("n", "<leader>fo", builtin.oldfiles, { desc = "Telescope recent files" })
+set("n", "<leader>fr", builtin.resume, { desc = "Telescope resume" })
 
 set("n", "<leader>xx", "<cmd>Trouble diagnostics win.type=float focus=true<cr>", { noremap = true, silent = true })
 set(
@@ -239,6 +292,15 @@ set(
 set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
 set("n", "<leader>w", "<cmd>write<cr>")
 set("n", "<leader>q", "<cmd>quitall<cr>")
+set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>")
+set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+set({ "n", "x" }, "<leader>gr", function()
+	require("refactoring").select_refactor()
+end)
 
-set("n", "<leader>/", ":normal gcc<cr><down>", { desc = "[/] Toggle comment line" })
-set("v", "<leader>/", "<esc>:normal gvgc<cr>", { desc = "[/] Toggle comment block" })
+set("n", "<leader>/", ":normal gcc<cr><down>", { desc = "[/] Toggle comment line", noremap = true, silent = true })
+set("v", "<leader>/", "<esc>:normal gvgc<cr>", { desc = "[/] Toggle comment block", noremap = true, silent = true })
+
+set("n", "<leader>c", "<cmd>bdelete<cr>", { noremap = true, silent = true })
+
+set("n", "<leader>gl", "<cmd>Gitsigns blame_line<cr>", { desc = "Git blame line" })
