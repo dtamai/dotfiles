@@ -202,7 +202,7 @@ cmp.setup({
 
 require("nvim-tree").setup({
 	view = {
-		width = 50,
+		width = 80,
 	},
 	update_focused_file = {
 		enable = true,
