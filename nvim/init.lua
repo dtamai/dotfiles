@@ -82,7 +82,7 @@ vim.lsp.enable("lua_ls", {
 	capabilities = capabilities,
 })
 
-vim.lsp.enable("tsgo", {
+vim.lsp.enable("tsc", {
 	capabilities = capabilities,
 })
 
@@ -294,6 +294,7 @@ set("n", "<leader>w", "<cmd>write<cr>")
 set("n", "<leader>q", "<cmd>quitall<cr>")
 set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>")
 set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
 set({ "n", "x" }, "<leader>gr", function()
 	require("refactoring").select_refactor()
 end)
